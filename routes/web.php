@@ -19,18 +19,22 @@ use App\Http\Controllers\Frontend\PortfolioController;
 |
 */
 
-Route::get('',[HomeController::class,'index'])->name('home');
-Route::get('home',[HomeController::class,'index']);
+Route::middleware(['guest'])->group(function () {
+    Route::get('',[HomeController::class,'index'])->name('home');
+    Route::get('home',[HomeController::class,'index']);
 
-Route::get('services',[ServiceController::class,'index'])->name('services');
-Route::get('resume',[ResumeController::class,'index'])->name('resume');
-Route::get('portfolio',[PortfolioController::class,'index'])->name('portfolio');
-Route::get('portfolio-details',[PortfolioController::class,'single'])->name('portfolio-details');
+    Route::get('services',[ServiceController::class,'index'])->name('services');
+    Route::get('resume',[ResumeController::class,'index'])->name('resume');
+    Route::get('portfolio',[PortfolioController::class,'index'])->name('portfolio');
+    Route::get('portfolio-details',[PortfolioController::class,'single'])->name('portfolio-details');
 
-Route::get('blog',[BlogController::class,'index'])->name('blog');
-Route::get('blog-details',[BlogController::class,'single'])->name('blog-details');
+    Route::get('blog',[BlogController::class,'index'])->name('blog');
+    Route::get('blog/{article}',[BlogController::class,'single'])->name('article');
 
-Route::get('contact',[ContactController::class,'index'])->name('contact');
+    Route::get('contact',[ContactController::class,'index'])->name('contact');
+
+
+});
 
 
 

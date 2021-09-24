@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="footer-logo">
-            <a href="#"><img src="img/logo.png" alt="footer-logo" /></a>
+            <a href="#"><img src="{{asset('img/logo.png')}}" alt="footer-logo" /></a>
           </div>
         </div>
       </div>

@@ -70,29 +70,48 @@
       </div>
       <div class="row">
         <div class="col-md-6 col-lg-7">
-          <form>
+          @if ($errors->any())
+            @foreach ($errors->all() as $error)
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Error!</strong> {{$error}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            @endforeach  
+          @endif
+          @if (session('success'))
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!!</strong> {{session('success')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          @endif
+          <form method="post" enctype="multipart/form-data" action="{{route('contact')}}">
+            @csrf
             <div class="row">
               <div class="col-lg-6">
                 <div class="form-group">
-                  <input
+                  <input name="name"
                     type="text"
                     class="form-control"
-                    placeholder="Name"
+                    placeholder="Your Name"
                   />
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="form-group">
-                  <input
+                  <input name="email"
                     type="email"
                     class="form-control"
-                    placeholder="Email"
+                    placeholder="Your Email"
                   />
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="form-group">
-                  <input
+                  <input name="subject"
                     type="text"
                     class="form-control"
                     placeholder="Subject"
@@ -101,12 +120,12 @@
               </div>
               <div class="col-lg-6">
                 <div class="form-group">
-                  <input type="file" class="form-control" />
+                  <input type="file" name="file" class="form-control" />
                 </div>
               </div>
               <div class="col-lg-12">
                 <div class="form-group">
-                  <textarea
+                  <textarea name="message"
                     class="form-control"
                     placeholder="Message"
                   ></textarea>
@@ -125,7 +144,7 @@
         </div>
         <div class="col-md-6 col-lg-5">
           <div class="contact-img">
-            <img src="img/contact.png" alt="contact" />
+            <img src="{{asset('img/contact.png')}}" alt="contact" />
           </div>
         </div>
       </div>

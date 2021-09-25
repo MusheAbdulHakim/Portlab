@@ -8,21 +8,19 @@
 
 # Screenshots
 
-![Homepage](screenshots/home.jpg?raw=true "Homepage")
+![Homepage](screenshots/home.png?raw=true "Homepage")
 
-![Services](screenshots/service.jpg?raw=true "Service page")
+![Services](screenshots/service.png?raw=true "Service page")
 
-![Resume](screenshots/resume.jpg?raw=true "Resume page")
+![Resume](screenshots/resume.png?raw=true "Resume page")
 
-![Portfolio](screenshots/port-list.jpg?raw=true "Portfolio list")
+![Portfolio](screenshots/port-list.png?raw=true "Portfolio list")
 
-![Portfolio Details](screenshots/port-details.jpg?raw=true "Portfolio Details page")
 
-![Blog](screenshots/blog-list.jpg?raw=true "Blog List page")
+![Blog](screenshots/blog-list.png?raw=true "Blog List page")
 
-![Blog Details](screenshots/blog-details.jpg?raw=true "Blog Details page")
 
-![Contact](screenshots/contact.jpg?raw=true "Contact page")
+![Contact](screenshots/contact.png?raw=true "Contact page")
 
 # Installation
  Follow these steps to install the application.

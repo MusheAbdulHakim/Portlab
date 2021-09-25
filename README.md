@@ -6,6 +6,24 @@
 5. blog
 6. contact
 
+# Screenshots
+
+![Homepage](screenshots/home.jpg?raw=true "Homepage")
+
+![Services](screenshots/service.jpg?raw=true "Service page")
+
+![Resume](screenshots/resume.jpg?raw=true "Resume page")
+
+![Portfolio](screenshots/port-list.jpg?raw=true "Portfolio list")
+
+![Portfolio Details](screenshots/port-details.jpg?raw=true "Portfolio Details page")
+
+![Blog](screenshots/blog-list.jpg?raw=true "Blog List page")
+
+![Blog Details](screenshots/blog-details.jpg?raw=true "Blog Details page")
+
+![Contact](screenshots/contact.jpg?raw=true "Contact page")
+
 # Installation
  Follow these steps to install the application.
 

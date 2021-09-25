@@ -22,7 +22,7 @@ class BlogController extends Controller
     }
 
     public function single(Request $request, Article $article){
-        $title = 'blog Detail';
+        $title = $article->title;
         return view('frontend.blog-details',compact(
             'title','article',
         ));

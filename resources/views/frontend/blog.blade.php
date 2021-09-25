@@ -34,48 +34,7 @@
             <div class="row">
                 @foreach ($articles as $article)
                 <div class="col-md-6 col-lg-6">
-                    <div class="blog-card">
-                    <div class="blog-img">
-                        <img src="{{asset($article->image)}}" alt="blog-1" />
-                        <div class="blog-oly">
-                            <p>
-                            @php
-                                foreach($article->tags as $tag){
-                                    $tags_array[] = $tag->name;
-                                }
-                                $article_tags = implode(',',$tags_array);
-                            @endphp
-                            {{$article_tags}}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <ul class="blog-meta">
-                            <li>
-                                <i class="flaticon-calendar"></i>
-                                <p>{{date_format(date_create($article->created_at),'d M,Y')}}</p>
-                            </li>
-                        <li>
-                            <i class="flaticon-share"></i>
-                            <p>5 share</p>
-                        </li>
-                        </ul>
-                        <div class="blog-text">
-                        <h4>
-                            <a href="{{route('article',$article)}}"
-                            >{{$article->title}}</a
-                            >
-                        </h4>
-                        </div>
-                        <ul class="blog-link">
-                        <li><a class="btn btn-inline" href="{{route('article',$article)}}">read more</a></li>
-                        <li>
-                            <i class="flaticon-chat"></i>
-                            <p>13 comments</p>
-                        </li>
-                        </ul>
-                    </div>
-                    </div>
+                    <x-article :article="$article" />
                 </div>
                 @endforeach
             </div>
@@ -109,8 +68,10 @@
         <div class="col-lg-4">
             <div class="row">
             <div class="col-lg-12">
-                <form class="blog-src">
-                <input type="text" placeholder="Search..." /><button>
+                <form class="blog-src" method="post" action="{{route('article.search')}}">
+                    @csrf
+                <input type="text" placeholder="Search..." />
+                <button type="submit">
                     <i class="fas fa-search"></i>
                 </button>
                 </form>
@@ -190,7 +151,7 @@
                     @foreach ($categories as $category)
                         <li>
                             <h5><a href="">{{$category->name}}</a></h5>
-                            <p>23</p>
+                            <p>{{$category->articles->count()}}</p>
                         </li>
                     @endforeach
                 </ul>
@@ -231,7 +192,7 @@
             <div class="col-lg-12">
                 <div class="blog-ad">
                 <a href="#"
-                    ><img src="img/ad-banner.jpg" alt="ad-banner"
+                    ><img src="{{asset('img/ad-banner.jpg')}}" alt="ad-banner"
                 /></a>
                 </div>
             </div>

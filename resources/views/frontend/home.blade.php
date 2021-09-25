@@ -92,7 +92,7 @@
           <div class="about-btn duel-btn">
             <a class="btn btn-inline" href="#" download
               ><i class="fas fa-download"></i><span>Download CV</span></a
-            ><a class="btn btn-inline" href="#"
+            ><a class="btn btn-inline" href="{{route('contact')}}"
               ><i class="fas fa-headset"></i><span>contact me</span></a
             >
           </div>
@@ -631,7 +631,7 @@
           </div>
           <div class="col-md-5 col-lg-4">
             <div class="discuss-btn">
-              <a class="btn btn-inline" href="#"
+              <a class="btn btn-inline" href="{{route('contact')}}"
                 ><i class="fas fa-paper-plane"></i
                 ><span>Get in Touch</span></a
               >
@@ -687,72 +687,12 @@
         </div>
       </div>
       <div class="row">
+        @foreach ($pricings as $pricing)
         <div class="col-md-6 col-lg-4">
-          <div class="pricing-card">
-            <div class="pricing-money">
-              <h3>basic</h3>
-              <h4>$30.00</h4>
-              <p>per project</p>
-            </div>
-            <ul class="pricing-list">
-              <li>One landing page</li>
-              <li>With responsive</li>
-              <li>modern design</li>
-              <li>Three rivision</li>
-              <li>four section</li>
-            </ul>
-            <div class="pricing-btn">
-              <a class="btn btn-inline" href="#"
-                ><i class="fas fa-paper-plane"></i
-                ><span>Purchase plan</span></a
-              >
-            </div>
+            <x-pricing :category="$pricing->category" :price="$pricing->cost" :elements="$pricing->elements" />
           </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="pricing-card pricing-recom">
-            <div class="pricing-money">
-              <h3>standard</h3>
-              <h4>$60.00</h4>
-              <p>per project</p>
-            </div>
-            <ul class="pricing-list">
-              <li>One landing page</li>
-              <li>With responsive</li>
-              <li>modern design</li>
-              <li>five rivision</li>
-              <li>six section</li>
-            </ul>
-            <div class="pricing-btn">
-              <a class="btn btn-inline" href="#"
-                ><i class="fas fa-paper-plane"></i
-                ><span>Purchase plan</span></a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="pricing-card">
-            <div class="pricing-money">
-              <h3>premium</h3>
-              <h4>$99.00</h4>
-              <p>per project</p>
-            </div>
-            <ul class="pricing-list">
-              <li>One landing page</li>
-              <li>With responsive</li>
-              <li>modern design</li>
-              <li>eight rivision</li>
-              <li>nine section</li>
-            </ul>
-            <div class="pricing-btn">
-              <a class="btn btn-inline" href="#"
-                ><i class="fas fa-paper-plane"></i
-                ><span>Purchase plan</span></a
-              >
-            </div>
-          </div>
-        </div>
+        @endforeach
+        
       </div>
     </div>
   </section>
@@ -762,104 +702,16 @@
         <div class="col-lg-12">
           <div class="section-heading">
             <p>faq <span>question</span></p>
-            <h2>Find your question before we work together</h2>
+            <p>See if your question have been answered already before you ask.</p>
           </div>
         </div>
       </div>
       <div class="row">
+        @foreach ($faqs as $faq)
         <div class="col-md-6 col-lg-6">
-          <div class="faq-parent">
-            <div class="faq-child">
-              <div class="faq-que">
-                <button>What needs to be done to place your order ?</button>
-              </div>
-              <div class="faq-ans">
-                <p>
-                  psd / png / jpg / pdf / any source file or reference link
-                  must be provided. If nothing else, tell me your needs,
-                  likes, or thoughts.
-                </p>
-              </div>
-            </div>
-            <div class="faq-child">
-              <div class="faq-que">
-                <button>I don't have PSD and JPG but I have Idea...</button>
-              </div>
-              <div class="faq-ans">
-                <p>
-                  No problem, you will give me your idea and requirements of
-                  your website, in this case i'll help you to generate idea.
-                </p>
-              </div>
-            </div>
-            <div class="faq-child">
-              <div class="faq-que">
-                <button>
-                  What If I provide JPG file instant of PSD file ?
-                </button>
-              </div>
-              <div class="faq-ans">
-                <p>
-                  In this case the photos will be used in the website will not
-                  have good quality. But I can provide you with similar photos
-                  with limited cost.
-                </p>
-              </div>
-            </div>
-          </div>
+          <x-faqs :question="$faq->question" :answer="$faq->answer" />
         </div>
-        <div class="col-md-6 col-lg-6">
-          <div class="faq-parent">
-            <div class="faq-child">
-              <div class="faq-que">
-                <button>
-                  How long will I take to handover your project ?
-                </button>
-              </div>
-              <div class="faq-ans">
-                <p>
-                  It depends on the complexity of your project but I've team
-                  so, I'm capable to finish your project faster than anyone
-                  else.
-                </p>
-              </div>
-            </div>
-            <div class="faq-child">
-              <div class="faq-que">
-                <button>
-                  If i don't get my project according to my requirement ?
-                </button>
-              </div>
-              <div class="faq-ans">
-                <p>
-                  Well It never happened. In this case i'll redesign for you
-                  if the design doesn't full fill your requirement.
-                </p>
-              </div>
-            </div>
-            <div class="faq-child">
-              <div class="faq-que">
-                <button>
-                  Do you use any automated Software conversion ?
-                </button>
-              </div>
-              <div class="faq-ans">
-                <p>
-                  Never! All codes are hand-typed code with well commented and
-                  W3C Validated.
-                </p>
-              </div>
-            </div>
-            <div class="faq-child">
-              <div class="faq-que">
-                <button>Will I get pixel perfect design ?</button>
-              </div>
-              <div class="faq-ans">
-                <p>Yes, You will get a pixel perfect and fresh design.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        @endforeach        
       </div>
     </div>
   </section>
@@ -868,70 +720,16 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <p>clients <span>qoute</span></p>
-            <h2>Received fantastic feedback from the clients</h2>
+            <p>clients <span>qoutes</span></p>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <div class="testi-slider">
-            <div class="testi-card">
-              <i class="flaticon-favorites"></i>
-              <div class="testi-quote">
-                <p>
-                  Oustanding design and collaboration. I'm satisfied work with
-                  him.
-                </p>
-              </div>
-              <div class="testi-meta">
-                <h5>austin houston</h5>
-                <p>new york, usa</p>
-                <a href="#"><img src="img/testi-1.jpg" alt="testi-1" /></a>
-              </div>
-            </div>
-            <div class="testi-card">
-              <i class="flaticon-favorites"></i>
-              <div class="testi-quote">
-                <p>
-                  Oustanding design and collaboration. I'm satisfied work with
-                  him.
-                </p>
-              </div>
-              <div class="testi-meta">
-                <h5>devid whigtmore</h5>
-                <p>rome, Italy</p>
-                <a href="#"><img src="img/testi-2.jpg" alt="testi-2" /></a>
-              </div>
-            </div>
-            <div class="testi-card">
-              <i class="flaticon-favorites"></i>
-              <div class="testi-quote">
-                <p>
-                  Oustanding design and collaboration. I'm satisfied work with
-                  him.
-                </p>
-              </div>
-              <div class="testi-meta">
-                <h5>sane galonhop</h5>
-                <p>dubai, uae</p>
-                <a href="#"><img src="img/testi-3.jpg" alt="testi-3" /></a>
-              </div>
-            </div>
-            <div class="testi-card">
-              <i class="flaticon-favorites"></i>
-              <div class="testi-quote">
-                <p>
-                  Oustanding design and collaboration. I'm satisfied work with
-                  him.
-                </p>
-              </div>
-              <div class="testi-meta">
-                <h5>martin howelling</h5>
-                <p>toronto, canada</p>
-                <a href="#"><img src="img/testi-4.jpg" alt="testi-4" /></a>
-              </div>
-            </div>
+            @foreach ($quotes as $quote)
+                <x-quotes :name="$quote->name" :address="$quote->address" :quote="$quote->quote" :image="$quote->image" />
+            @endforeach
           </div>
         </div>
       </div>
@@ -951,8 +749,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <p>my <span>blogs</span></p>
-            <h2>Some article about my activity &amp; experience</h2>
+            <p>Latest <span>Articles</span></p>
           </div>
         </div>
       </div>
@@ -1027,73 +824,38 @@
             </div>
           </div>
         </div>
-        <div class="col-md-12 col-lg-4">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="blog-suggest">
-                <div class="suggest-img">
-                  <a href="#"
-                    ><img src="img/suggest-1.jpg" alt="suggest-1"
-                  /></a>
-                </div>
-                <div class="suggest-content">
-                  <div class="suggest-title">
-                    <h6>
-                      <a href="#"
-                        >Business contents insurance is a type of business.</a
-                      >
-                    </h6>
-                  </div>
-                  <div class="suggest-date">
-                    <i class="flaticon-calendar"></i>
-                    <p>02 feb 2020</p>
-                  </div>
-                </div>
-              </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="blog-card">
+            <div class="blog-img">
+              <img src="img/blog-3.jpg" alt="blog-2" />
+              <div class="blog-oly"><p>javascript</p></div>
             </div>
-            <div class="col-lg-12">
-              <div class="blog-suggest">
-                <div class="suggest-img">
+            <div class="blog-content">
+              <ul class="blog-meta">
+                <li>
+                  <i class="flaticon-calendar"></i>
+                  <p>02 feb 2020</p>
+                </li>
+                <li>
+                  <i class="flaticon-share"></i>
+                  <p>5 share</p>
+                </li>
+              </ul>
+              <div class="blog-text">
+                <h4>
                   <a href="#"
-                    ><img src="img/suggest-2.jpg" alt="suggest-2"
-                  /></a>
-                </div>
-                <div class="suggest-content">
-                  <div class="suggest-title">
-                    <h6>
-                      <a href="#"
-                        >Business contents insurance is a type of business.</a
-                      >
-                    </h6>
-                  </div>
-                  <div class="suggest-date">
-                    <i class="flaticon-calendar"></i>
-                    <p>02 feb 2020</p>
-                  </div>
-                </div>
+                    >Business contents insurance iure ipsam ratione is a type
+                    of business...</a
+                  >
+                </h4>
               </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="blog-suggest">
-                <div class="suggest-img">
-                  <a href="#"
-                    ><img src="img/suggest-3.jpg" alt="suggest-3"
-                  /></a>
-                </div>
-                <div class="suggest-content">
-                  <div class="suggest-title">
-                    <h6>
-                      <a href="#"
-                        >Business contents insurance is a type of business.</a
-                      >
-                    </h6>
-                  </div>
-                  <div class="suggest-date">
-                    <i class="flaticon-calendar"></i>
-                    <p>02 feb 2020</p>
-                  </div>
-                </div>
-              </div>
+              <ul class="blog-link">
+                <li><a class="btn btn-inline" href="#">read more</a></li>
+                <li>
+                  <i class="flaticon-chat"></i>
+                  <p>13 comments</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1101,7 +863,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="blog-btn">
-            <a class="btn btn-inline" href="#"
+            <a class="btn btn-inline" href="{{route('blog')}}"
               ><i class="far fa-eye"></i><span>show more</span></a
             >
           </div>
@@ -1109,110 +871,7 @@
       </div>
     </div>
   </section>
-  <section class="section contact-part">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-heading">
-            <p>contact <span>me</span></p>
-            <h2>I'm always open to discussion time spand</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row mb-5">
-        <div class="col-md-4 col-lg-4">
-          <div class="contact-address">
-            <div class="address-icon"><i class="flaticon-telephone"></i></div>
-            <div class="address-text">
-              <h4>phone</h4>
-              <p>(+880) 1838288389 <span>(+880) 1941101915</span></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-lg-4">
-          <div class="contact-address">
-            <div class="address-icon"><i class="flaticon-mail"></i></div>
-            <div class="address-text">
-              <h4>email</h4>
-              <p>
-                mironcoder@gmail.com <span>mironbonny1994@gmail.com</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-lg-4">
-          <div class="contact-address">
-            <div class="address-icon"><i class="flaticon-pin"></i></div>
-            <div class="address-text">
-              <h4>location</h4>
-              <p>1420 East Delpara <span>Narayanganj, Bangladesh</span></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-lg-7">
-          <form>
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Name"
-                  />
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="Email"
-                  />
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Subject"
-                  />
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <input type="file" class="form-control" />
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="form-group">
-                  <textarea
-                    class="form-control"
-                    placeholder="Message"
-                  ></textarea>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="form-btn">
-                  <button class="btn btn-inline" type="submit">
-                    <i class="fas fa-paper-plane"></i
-                    ><span>send message</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-6 col-lg-5">
-          <div class="contact-img">
-            <img src="img/contact.png" alt="contact" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>    
+   
 @endsection
 
 

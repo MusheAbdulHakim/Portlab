@@ -32,7 +32,7 @@ Route::middleware(['guest'])->group(function () {
     Route::get('blog/{article}',[BlogController::class,'single'])->name('article');
 
     Route::get('contact',[ContactController::class,'index'])->name('contact');
-
+    Route::post('contact',[ContactController::class,'store']);
 
 });
 

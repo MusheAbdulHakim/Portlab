@@ -24,15 +24,11 @@
             <li class="navbar-item  {{route_is(['blog','article']) ? 'active': ''}}">
                 <a class="navbar-link" href="{{route('blog')}}">Blog</a>
             </li>
-            <li class="navbar-item">
+            <li class="navbar-item {{route_is('contact') ? 'active': ''}}">
                 <a class="navbar-link" href="{{route('contact')}}">contact</a>
             </li>
             </ul>
-            <div class="navbar-btn">
-            <a class="btn btn-inline" href="#"
-                ><i class="fas fa-code"></i><span>need to talk?</span></a
-            >
-            </div>
+            
         </div>
         </div>
     </div>

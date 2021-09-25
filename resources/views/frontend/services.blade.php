@@ -203,72 +203,11 @@
       </div>
     </div>
     <div class="row">
+      @foreach ($pricings as $pricing)
       <div class="col-md-6 col-lg-4">
-        <div class="pricing-card">
-          <div class="pricing-money">
-            <h3>basic</h3>
-            <h4>$30.00</h4>
-            <p>per project</p>
-          </div>
-          <ul class="pricing-list">
-            <li>One landing page</li>
-            <li>With responsive</li>
-            <li>modern design</li>
-            <li>Three rivision</li>
-            <li>four section</li>
-          </ul>
-          <div class="pricing-btn">
-            <a class="btn btn-inline" href="#"
-              ><i class="fas fa-paper-plane"></i
-              ><span>Purchase plan</span></a
-            >
-          </div>
+          <x-pricing :category="$pricing->category" :price="$pricing->cost" :elements="$pricing->elements" />
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="pricing-card pricing-recom">
-          <div class="pricing-money">
-            <h3>standard</h3>
-            <h4>$60.00</h4>
-            <p>per project</p>
-          </div>
-          <ul class="pricing-list">
-            <li>One landing page</li>
-            <li>With responsive</li>
-            <li>modern design</li>
-            <li>five rivision</li>
-            <li>six section</li>
-          </ul>
-          <div class="pricing-btn">
-            <a class="btn btn-inline" href="#"
-              ><i class="fas fa-paper-plane"></i
-              ><span>Purchase plan</span></a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="pricing-card">
-          <div class="pricing-money">
-            <h3>premium</h3>
-            <h4>$99.00</h4>
-            <p>per project</p>
-          </div>
-          <ul class="pricing-list">
-            <li>One landing page</li>
-            <li>With responsive</li>
-            <li>modern design</li>
-            <li>eight rivision</li>
-            <li>nine section</li>
-          </ul>
-          <div class="pricing-btn">
-            <a class="btn btn-inline" href="#"
-              ><i class="fas fa-paper-plane"></i
-              ><span>Purchase plan</span></a
-            >
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 </section>
@@ -283,99 +222,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 col-lg-6">
-        <div class="faq-parent">
-          <div class="faq-child">
-            <div class="faq-que">
-              <button>What needs to be done to place your order ?</button>
-            </div>
-            <div class="faq-ans">
-              <p>
-                psd / png / jpg / pdf / any source file or reference link
-                must be provided. If nothing else, tell me your needs,
-                likes, or thoughts.
-              </p>
-            </div>
-          </div>
-          <div class="faq-child">
-            <div class="faq-que">
-              <button>I don't have PSD and JPG but I have Idea...</button>
-            </div>
-            <div class="faq-ans">
-              <p>
-                No problem, you will give me your idea and requirements of
-                your website, in this case i'll help you to generate idea.
-              </p>
-            </div>
-          </div>
-          <div class="faq-child">
-            <div class="faq-que">
-              <button>
-                What If I provide JPG file instant of PSD file ?
-              </button>
-            </div>
-            <div class="faq-ans">
-              <p>
-                In this case the photos will be used in the website will not
-                have good quality. But I can provide you with similar photos
-                with limited cost.
-              </p>
-            </div>
-          </div>
+      @foreach ($faqs as $faq)
+        <div class="col-md-6 col-lg-6">
+          <x-faqs :question="$faq->question" :answer="$faq->answer" />
         </div>
-      </div>
-      <div class="col-md-6 col-lg-6">
-        <div class="faq-parent">
-          <div class="faq-child">
-            <div class="faq-que">
-              <button>
-                How long will I take to handover your project ?
-              </button>
-            </div>
-            <div class="faq-ans">
-              <p>
-                It depends on the complexity of your project but I've team
-                so, I'm capable to finish your project faster than anyone
-                else.
-              </p>
-            </div>
-          </div>
-          <div class="faq-child">
-            <div class="faq-que">
-              <button>
-                If i don't get my project according to my requirement ?
-              </button>
-            </div>
-            <div class="faq-ans">
-              <p>
-                Well It never happened. In this case i'll redesign for you
-                if the design doesn't full fill your requirement.
-              </p>
-            </div>
-          </div>
-          <div class="faq-child">
-            <div class="faq-que">
-              <button>
-                Do you use any automated Software conversion ?
-              </button>
-            </div>
-            <div class="faq-ans">
-              <p>
-                Never! All codes are hand-typed code with well commented and
-                W3C Validated.
-              </p>
-            </div>
-          </div>
-          <div class="faq-child">
-            <div class="faq-que">
-              <button>Will I get pixel perfect design ?</button>
-            </div>
-            <div class="faq-ans">
-              <p>Yes, You will get a pixel perfect and fresh design.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      @endforeach  
     </div>
   </div>
 </section>
@@ -392,62 +243,9 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="testi-slider">
-          <div class="testi-card">
-            <i class="flaticon-favorites"></i>
-            <div class="testi-quote">
-              <p>
-                Oustanding design and collaboration. I'm satisfied work with
-                him.
-              </p>
-            </div>
-            <div class="testi-meta">
-              <h5>austin houston</h5>
-              <p>new york, usa</p>
-              <a href="#"><img src="img/testi-1.jpg" alt="testi-1" /></a>
-            </div>
-          </div>
-          <div class="testi-card">
-            <i class="flaticon-favorites"></i>
-            <div class="testi-quote">
-              <p>
-                Oustanding design and collaboration. I'm satisfied work with
-                him.
-              </p>
-            </div>
-            <div class="testi-meta">
-              <h5>devid whigtmore</h5>
-              <p>rome, Italy</p>
-              <a href="#"><img src="img/testi-2.jpg" alt="testi-2" /></a>
-            </div>
-          </div>
-          <div class="testi-card">
-            <i class="flaticon-favorites"></i>
-            <div class="testi-quote">
-              <p>
-                Oustanding design and collaboration. I'm satisfied work with
-                him.
-              </p>
-            </div>
-            <div class="testi-meta">
-              <h5>sane galonhop</h5>
-              <p>dubai, uae</p>
-              <a href="#"><img src="img/testi-3.jpg" alt="testi-3" /></a>
-            </div>
-          </div>
-          <div class="testi-card">
-            <i class="flaticon-favorites"></i>
-            <div class="testi-quote">
-              <p>
-                Oustanding design and collaboration. I'm satisfied work with
-                him.
-              </p>
-            </div>
-            <div class="testi-meta">
-              <h5>martin howelling</h5>
-              <p>toronto, canada</p>
-              <a href="#"><img src="img/testi-4.jpg" alt="testi-4" /></a>
-            </div>
-          </div>
+          @foreach ($quotes as $quote)
+              <x-quotes :name="$quote->name" :address="$quote->address" :quote="$quote->quote" :image="$quote->image" />
+          @endforeach
         </div>
       </div>
     </div>

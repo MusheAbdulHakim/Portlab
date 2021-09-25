@@ -8,6 +8,20 @@
       <li class="nav-item"><a class="nav-link" href="{{ backpack_url('tag') }}"><i class="nav-icon la la-tag"></i> Tags</a></li>
     </ul>
 </li>
+<li class='nav-item'>
+    <a class='nav-link' href='{{ backpack_url('quote')}}'>
+        <i class='nav-icon la la-quote-left'></i>
+        <span>Quotes</span>
+    </a>
+</li>
+<li class='nav-item'>
+    <a class='nav-link' href='{{ backpack_url('faq')}}'>
+        <i class='nav-icon la la-question'></i>
+         <span>Faq</span>
+    </a>
+</li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('pricing') }}'><i class='nav-icon la la-dollar'></i> Pricings</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('contact') }}'><i class='nav-icon la la-snapchat'></i> Contacts</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('setting') }}'><i class='nav-icon la la-cog'></i> <span>Settings</span></a></li>
 <!-- Users, Roles, Permissions -->
 <li class="nav-item nav-dropdown">
@@ -21,3 +35,5 @@
 
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('log') }}'><i class='nav-icon la la-terminal'></i> Logs</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}"><i class="nav-icon la la-files-o"></i> <span>{{ trans('backpack::crud.file_manager') }}</span></a></li>
+
+

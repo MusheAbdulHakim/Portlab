@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -11,7 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, CrudTrait, HasRoles;
+    use HasFactory, Notifiable, CrudTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'about','birthday',
+        'social_account','phone',
+        'address','cv'
     ];
 
     /**
@@ -41,5 +43,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'social_account' => 'array'
     ];
 }

@@ -284,83 +284,16 @@
         </div>
       </div>
       <div class="row">
+        @foreach ($services as $service)
         <div class="col-md-6 col-lg-4">
-          <div class="service-card">
-            <h3>01</h3>
-            <span class="flaticon-computer"></span
-            ><i class="flaticon-computer"></i>
-            <h4>website design</h4>
-            <p>
-              I have got much experience working with front-end coding HTML,
-              CSS, SASS, JAVASCRIPT, BOOTSTRAP, JQUERY.
-            </p>
-          </div>
+          <x-service :service="$service" />
         </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="service-card service-ghape">
-            <h3>02</h3>
-            <span class="flaticon-wordpress"></span
-            ><i class="flaticon-wordpress"></i>
-            <h4>wordpress customize</h4>
-            <p>
-              Also have dynamic website development experience with wordpress
-              based solutions, wordpress plugins.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="service-card">
-            <h3>03</h3>
-            <span class="flaticon-online-ads"></span
-            ><i class="flaticon-online-ads"></i>
-            <h4>web banner</h4>
-            <p>
-              I have helped a lot of companies and startups designing their
-              advertising campaigns and modern websites.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="service-card">
-            <h3>04</h3>
-            <span class="flaticon-mail"></span><i class="flaticon-mail"></i>
-            <h4>email signature</h4>
-            <p>
-              I am expert to code HTML email signature for you that can be
-              used in Gmail, Yahoo, Outlook, Mac Mail, Hotmail etc.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="service-card service-ghape">
-            <h3>05</h3>
-            <span class="flaticon-responsive-design"></span
-            ><i class="flaticon-responsive-design"></i>
-            <h4>responsive design</h4>
-            <p>
-              I will do responsive website design and build complete website
-              by CSS FLEXBOX, GRID, BOOTSTRAP etc.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="service-card">
-            <h3>06</h3>
-            <span class="flaticon-tools-and-utensils"></span
-            ><i class="flaticon-tools-and-utensils"></i>
-            <h4>sass coding</h4>
-            <p>
-              SASS is a CSS pre-processor that lets use variables, mixins,
-              loops, functions, imports, and other interesting functionalities
-              .
-            </p>
-          </div>
-        </div>
+        @endforeach  
       </div>
       <div class="row">
         <div class="col-lg-12">
           <div class="service-btn">
-            <a class="btn btn-inline" href="#"
+            <a class="btn btn-inline" href="{{route('services')}}"
               ><i class="far fa-eye"></i><span>show more</span></a
             >
           </div>

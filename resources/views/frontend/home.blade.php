@@ -49,48 +49,40 @@
       <div class="row">
         <div class="col-lg-7">
           <div class="about-summery">
-            <h3>I'm Mahmudul hasan (miron)</h3>
+            <h3>{{$user->name}}</h3>
             <p>
-              I’m with broad technical skill-set, very strong attention to
-              detail, and 3 years of experience in front-end web development.
-              Able to multitask and juggle multiple pressing projects
-              simultaneously. On top of the latest trends and technologies.
-              Ability to improvise, troubleshoot, take ownership, and most
-              importantly learn new skills on the job.
+              {{$user->about}}
             </p>
           </div>
           <div class="about-list">
             <ul>
               <li>
                 <h6>Birthday:</h6>
-                <p>02 Februray 1995</p>
+                <p>{{date_format(date_create($user->birthday),'d M Y')}}</p>
               </li>
               <li>
                 <h6>Lives in:</h6>
-                <p>Narayanganj, Bangladesh</p>
+                <p>{{$user->address}}</p>
               </li>
-              <li>
-                <h6>Website:</h6>
-                <p>www.mironmahmud.com</p>
-              </li>
+              
             </ul>
             <ul>
               <li>
                 <h6>Phone:</h6>
-                <p>(+880) 1838288389</p>
+                <p>{{$user->phone}}</p>
               </li>
-              <li>
-                <h6>Skype:</h6>
-                <p>live:mironhasan018</p>
-              </li>
-              <li>
-                <h6>Linkedin:</h6>
-                <p>/mironcoder</p>
-              </li>
+              
+              {{-- @foreach ($user->social_account as $media)
+                  <li>
+                    <h6>{{$media->name}}</h6>
+                    <p>{{$media->url}}</p>
+                  </li>
+              @endforeach --}}
+              
             </ul>
           </div>
           <div class="about-btn duel-btn">
-            <a class="btn btn-inline" href="#" download
+            <a class="btn btn-inline" href="{{asset($user->cv)}}" download
               ><i class="fas fa-download"></i><span>Download CV</span></a
             ><a class="btn btn-inline" href="{{route('contact')}}"
               ><i class="fas fa-headset"></i><span>contact me</span></a

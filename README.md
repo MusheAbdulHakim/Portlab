@@ -27,7 +27,7 @@
 
 1. Clone the Repository
 ```
-git clone https://github.com/MusheAbdulHakim/Potlab.git
+git clone https://github.com/MusheAbdulHakim/Portlab.git
 
 ```
 2. Go to project directory

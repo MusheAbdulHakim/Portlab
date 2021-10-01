@@ -9,6 +9,7 @@ use App\Models\Pricing;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Resume;
 
 class HomeController extends Controller
 {
@@ -18,9 +19,10 @@ class HomeController extends Controller
         $quotes = Quote::get();
         $pricings = Pricing::get();
         $services = Service::get();
+        $resume = Resume::first();
         return view('frontend.home',compact(
             'title','faqs','quotes','pricings',
-            'services',
+            'services','resume'
         ));
     }
 }

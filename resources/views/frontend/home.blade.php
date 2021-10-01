@@ -49,40 +49,35 @@
       <div class="row">
         <div class="col-lg-7">
           <div class="about-summery">
-            <h3>{{$user->name}}</h3>
+            <h3>{{backpack_user()->name}}</h3>
             <p>
-              {{$user->about}}
+              {{backpack_user()->about}}
             </p>
           </div>
           <div class="about-list">
             <ul>
               <li>
                 <h6>Birthday:</h6>
-                <p>{{date_format(date_create($user->birthday),'d M Y')}}</p>
+                <p>{{date_format(date_create(backpack_user()->birthday),'d M Y')}}</p>
               </li>
               <li>
                 <h6>Lives in:</h6>
-                <p>{{$user->address}}</p>
+                <p>{{backpack_user()->address}}</p>
               </li>
               
             </ul>
             <ul>
               <li>
                 <h6>Phone:</h6>
-                <p>{{$user->phone}}</p>
+                <p>{{backpack_user()->phone}}</p>
               </li>
               
-              {{-- @foreach ($user->social_account as $media)
-                  <li>
-                    <h6>{{$media->name}}</h6>
-                    <p>{{$media->url}}</p>
-                  </li>
-              @endforeach --}}
+              
               
             </ul>
           </div>
           <div class="about-btn duel-btn">
-            <a class="btn btn-inline" href="{{asset($user->cv)}}" download
+            <a class="btn btn-inline" href="{{!empty(backpack_user()->cv) ? asset(backpack_user()->cv) : '#'}}" {{!empty(backpack_user()->cv) ? 'download' : ''}}
               ><i class="fas fa-download"></i><span>Download CV</span></a
             ><a class="btn btn-inline" href="{{route('contact')}}"
               ><i class="fas fa-headset"></i><span>contact me</span></a

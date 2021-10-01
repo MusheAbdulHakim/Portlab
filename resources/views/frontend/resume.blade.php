@@ -123,54 +123,11 @@
         </div>
       </div>
       <div class="row">
+        @foreach ($references as $reference)
         <div class="col-lg-6">
-          <div class="refer-card">
-            <div class="refer-img">
-              <img src="img/refer-1.jpg" alt="refer-1" />
-            </div>
-            <div class="refer-content">
-              <h4>Maccelam Bond</h4>
-              <p>
-                Sr. Ux / Ui Designer <span>at Creative It Institute</span>
-              </p>
-              <ul class="refer-contact">
-                <li>
-                  <a class="icon icon-inline" href="#"
-                    ><i class="fas fa-phone-alt"></i
-                  ></a>
-                </li>
-                <li>
-                  <a class="icon icon-inline" href="#"
-                    ><i class="fas fa-envelope"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <x-reference :reference="$reference" />
         </div>
-        <div class="col-lg-6">
-          <div class="refer-card">
-            <div class="refer-img">
-              <img src="img/refer-2.jpg" alt="refer-2" />
-            </div>
-            <div class="refer-content">
-              <h4>Lady Watsona</h4>
-              <p>Deputy Manager <span>at Icon Infotech LTD</span></p>
-              <ul class="refer-contact">
-                <li>
-                  <a class="icon icon-inline" href="#"
-                    ><i class="fas fa-phone-alt"></i
-                  ></a>
-                </li>
-                <li>
-                  <a class="icon icon-inline" href="#"
-                    ><i class="fas fa-envelope"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        @endforeach        
       </div>
     </div>
   </section>

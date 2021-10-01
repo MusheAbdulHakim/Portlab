@@ -1,3 +1,6 @@
+@php
+    $user = \App\Models\User::first();
+@endphp
 <section class="section footer-part">
     <div class="container">
       <div class="row">
@@ -10,13 +13,15 @@
       <div class="row">
         <div class="col-lg-12">
           <ul class="footer-icon">
-            @foreach (backpack_user()->getSocialAccounts(backpack_user()->social_account) as $account)
+            @if (!empty($user->social_account))
+            @foreach ($user->getSocialAccounts($user->social_account) as $account)
             <li>
               <a class="icon icon-inline" target="_blank" href="{{$account->url}}"
                 ><i class="{{$account->icon}}"></i
               ></a>
             </li>
             @endforeach
+            @endif
           </ul>
         </div>
       </div>

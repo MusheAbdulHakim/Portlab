@@ -20,9 +20,10 @@ class HomeController extends Controller
         $pricings = Pricing::get();
         $services = Service::get();
         $resume = Resume::first();
+        $user = User::first();
         return view('frontend.home',compact(
             'title','faqs','quotes','pricings',
-            'services','resume'
+            'services','resume','user'
         ));
     }
 }

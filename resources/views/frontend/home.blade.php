@@ -44,40 +44,37 @@
       </div>
     </div>
   </section>
-  <section class="section about-part cate-active">
+  <section id="about-section" class="section about-part cate-active">
     <div class="container">
       <div class="row">
         <div class="col-lg-7">
           <div class="about-summery">
-            <h3>{{backpack_user()->name}}</h3>
+            <h3>{{$user->name}}</h3>
             <p>
-              {{backpack_user()->about}}
+              {{$user->about}}
             </p>
           </div>
           <div class="about-list">
             <ul>
               <li>
                 <h6>Birthday:</h6>
-                <p>{{date_format(date_create(backpack_user()->birthday),'d M Y')}}</p>
+                <p>{{date_format(date_create($user->birthday),'d M Y')}}</p>
               </li>
               <li>
                 <h6>Lives in:</h6>
-                <p>{{backpack_user()->address}}</p>
+                <p>{{$user->address}}</p>
               </li>
               
             </ul>
             <ul>
               <li>
                 <h6>Phone:</h6>
-                <p>{{backpack_user()->phone}}</p>
-              </li>
-              
-              
-              
+                <p>{{$user->phone}}</p>
+              </li>                        
             </ul>
           </div>
           <div class="about-btn duel-btn">
-            <a class="btn btn-inline" href="{{!empty(backpack_user()->cv) ? asset(backpack_user()->cv) : '#'}}" {{!empty(backpack_user()->cv) ? 'download' : ''}}
+            <a class="btn btn-inline" href="{{!empty($user->cv) ? asset($user->cv) : '#'}}" {{!empty($user->cv) ? 'download' : ''}}
               ><i class="fas fa-download"></i><span>Download CV</span></a
             ><a class="btn btn-inline" href="{{route('contact')}}"
               ><i class="fas fa-headset"></i><span>contact me</span></a
@@ -85,7 +82,7 @@
           </div>
         </div>
         <div class="col-lg-5">
-          <div class="about-img"><img src="img/about.png" alt="about" /></div>
+          <div class="about-img"><img src="{{asset('img/about.png')}}" alt="about" /></div>
         </div>
       </div>
     </div>
@@ -93,116 +90,26 @@
   <section class="section exper-part cate-active">
     <div class="container">
       <div class="row">
+        @if (!empty($resume))
+        @foreach ($resume->experiences as $experience)
         <div class="col-md-6 col-lg-6">
-          <div class="resume-card">
-            <span class="flaticon-medal"></span>
-            <h4>Feb 2016 - Dec 2017</h4>
-            <ul>
-              <li><i class="flaticon-deadline"></i></li>
-              <li>
-                <h5>Frontend Developer</h5>
-                <h6>Creative-It Institute</h6>
-              </li>
-            </ul>
-          </div>
+          <x-experience :experience="$experience" />
         </div>
-        <div class="col-md-6 col-lg-6">
-          <div class="resume-card">
-            <span class="flaticon-medal"></span>
-            <h4>Feb 2017 - Dec 2018</h4>
-            <ul>
-              <li><i class="flaticon-deadline"></i></li>
-              <li>
-                <h5>Frontend Developer</h5>
-                <h6>Ingenious-hub Team</h6>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-6">
-          <div class="resume-card">
-            <span class="flaticon-medal"></span>
-            <h4>Feb 2018 - Dec 2019</h4>
-            <ul>
-              <li><i class="flaticon-deadline"></i></li>
-              <li>
-                <h5>Frontend Developer</h5>
-                <h6>Icon-Infotech Limited</h6>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-6">
-          <div class="resume-card">
-            <span class="flaticon-medal"></span>
-            <h4>Feb 2019 - Dec 2020</h4>
-            <ul>
-              <li><i class="flaticon-deadline"></i></li>
-              <li>
-                <h5>Frontend Developer</h5>
-                <h6>Xpeedstudio</h6>
-              </li>
-            </ul>
-          </div>
-        </div>
+        @endforeach 
+        @endif
       </div>
     </div>
   </section>
   <section class="section edu-part cate-active">
     <div class="container">
       <div class="row">
+        @if (!empty($resume))
+        @foreach ($resume->qualifications as $qualification)
         <div class="col-md-6 col-lg-6">
-          <div class="resume-card">
-            <span class="flaticon-graduation-cap"></span>
-            <h4>apr 2017 - Running</h4>
-            <ul>
-              <li><i class="flaticon-deadline"></i></li>
-              <li>
-                <h5>B.S.S Honourse at Economics</h5>
-                <h6>Government Tolaram college, Narayanganj</h6>
-              </li>
-            </ul>
-          </div>
+          <x-qualification :qualification="$qualification" />
         </div>
-        <div class="col-md-6 col-lg-6">
-          <div class="resume-card">
-            <span class="flaticon-graduation-cap"></span>
-            <h4>jan 2015 - feb 2017</h4>
-            <ul>
-              <li><i class="flaticon-deadline"></i></li>
-              <li>
-                <h5>Alim / H.S.C - GPA :4.57</h5>
-                <h6>Government Madrasha-E Alia, Dhaka</h6>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-6">
-          <div class="resume-card">
-            <span class="flaticon-graduation-cap"></span>
-            <h4>jan 2013 - dec 2015</h4>
-            <ul>
-              <li><i class="flaticon-deadline"></i></li>
-              <li>
-                <h5>Dakhil / S.S.C - GPA :450</h5>
-                <h6>Islami Mission Kamil Madrasha</h6>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-6">
-          <div class="resume-card">
-            <span class="flaticon-graduation-cap"></span>
-            <h4>jan 2011 - dec 2013</h4>
-            <ul>
-              <li><i class="flaticon-deadline"></i></li>
-              <li>
-                <h5>J.D.C / J.S.C - GPA :467</h5>
-                <h6>Badarpur Senior Alim Madrasha</h6>
-              </li>
-            </ul>
-          </div>
-        </div>
+        @endforeach
+        @endif
       </div>
     </div>
   </section>
@@ -440,100 +347,18 @@
         </div>
       </div>
       <div class="row skills-parent">
+        @if(!empty($resume->technologies))
+        @foreach($resume->technologies as $tech)
         <div class="col-6 col-sm-4 col-lg-2">
           <div class="skills-card">
             <div class="skills-img">
-              <img src="img/html.png" alt="html" />
+              <img src="{{asset($tech['avatar'])}}" alt="{{$tech['name']}}" />
             </div>
-            <div class="skills-name"><p>html</p></div>
+            <div class="skills-name"><p>{{$tech['name']}}</p></div>
           </div>
         </div>
-        <div class="col-6 col-sm-4 col-lg-2">
-          <div class="skills-card">
-            <div class="skills-img"><img src="img/css.png" alt="css" /></div>
-            <div class="skills-name"><p>css</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-2">
-          <div class="skills-card">
-            <div class="skills-img">
-              <img src="img/javascript.png" alt="javascript" />
-            </div>
-            <div class="skills-name"><p>javascript</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-2">
-          <div class="skills-card">
-            <div class="skills-img">
-              <img src="img/bootstrap.png" alt="bootstrap" />
-            </div>
-            <div class="skills-name"><p>bootstrap</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-2">
-          <div class="skills-card">
-            <div class="skills-img">
-              <img src="img/jquery.png" alt="jquery" />
-            </div>
-            <div class="skills-name"><p>jquery</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-2">
-          <div class="skills-card">
-            <div class="skills-img">
-              <img src="img/sass.png" alt="sass" />
-            </div>
-            <div class="skills-name"><p>sass</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-2">
-          <div class="skills-card">
-            <div class="skills-img">
-              <img src="img/wordpress.png" alt="wordpress" />
-            </div>
-            <div class="skills-name"><p>wordpress</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-2">
-          <div class="skills-card">
-            <div class="skills-img">
-              <img src="img/react.png" alt="react" />
-            </div>
-            <div class="skills-name"><p>react</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-2">
-          <div class="skills-card">
-            <div class="skills-img">
-              <img src="img/github.png" alt="github" />
-            </div>
-            <div class="skills-name"><p>github</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-2">
-          <div class="skills-card">
-            <div class="skills-img">
-              <img src="img/vscode.png" alt="vscode" />
-            </div>
-            <div class="skills-name"><p>vscode</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-2">
-          <div class="skills-card">
-            <div class="skills-img">
-              <img src="img/photoshop.png" alt="photoshop" />
-            </div>
-            <div class="skills-name"><p>photoshop</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-2">
-          <div class="skills-card">
-            <div class="skills-img">
-              <img src="img/illustrator.png" alt="illustrator" />
-            </div>
-            <div class="skills-name"><p>illustrator</p></div>
-          </div>
-        </div>
+        @endforeach
+        @endif
       </div>
     </div>
   </section>

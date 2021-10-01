@@ -62,7 +62,7 @@
               <div class="banner-content">
                 <ul class="banner-icon">
                   
-                  @foreach (backpack_user()->getSocialAccounts(backpack_user()->social_account) as $account)
+                  @foreach ($user->getSocialAccounts($user->social_account) as $account)
                     <li>
                       <a class="icon icon-inline" target="_blank" href="{{$account->url}}"
                         ><i class="{{$account->icon}}"></i
@@ -81,7 +81,7 @@
                   </p>
                 </div>
                 <div class="banner-btn duel-btn">
-                  <a class="btn btn-inline" href="#"
+                  <a class="btn btn-inline" href="#about-section"
                     ><i class="fas fa-arrows-alt"></i><span>know more</span></a
                   ><a class="btn btn-inline" href="{{route('portfolio')}}"
                     ><i class="fas fa-boxes"></i><span>demo work</span></a

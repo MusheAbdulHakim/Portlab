@@ -61,31 +61,15 @@
             <div class="col-lg-6 col-md-6">
               <div class="banner-content">
                 <ul class="banner-icon">
-                  <li>
-                    <a class="icon icon-inline" href="#"
-                      ><i class="fab fa-facebook-f"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a class="icon icon-inline" href="#"
-                      ><i class="fab fa-twitter"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a class="icon icon-inline" href="#"
-                      ><i class="fab fa-linkedin-in"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a class="icon icon-inline" href="#"
-                      ><i class="fab fa-instagram"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a class="icon icon-inline" href="#"
-                      ><i class="fab fa-dribbble"></i
-                    ></a>
-                  </li>
+                  
+                  @foreach (backpack_user()->getSocialAccounts(backpack_user()->social_account) as $account)
+                    <li>
+                      <a class="icon icon-inline" target="_blank" href="{{$account->url}}"
+                        ><i class="{{$account->icon}}"></i
+                      ></a>
+                    </li>
+                  @endforeach
+                  
                 </ul>
                 <div class="banner-text">
                   <span>Welcome dear!</span>

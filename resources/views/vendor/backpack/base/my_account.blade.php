@@ -67,7 +67,6 @@
                     'name' => 'about',
                     'type' => 'textarea',
                     'label' => "About",
-                    'hint' => 'brief introduction of yourself',
                     'default' => $user->about,
                 ]
             );
@@ -90,7 +89,7 @@
             $crud->addField(
                 [
                     'name' => 'address',
-                    'type' => 'textarea',
+                    'type' => 'address',
                     'label' => "Address",
                     'default' => $user->address,
                 ]
@@ -151,7 +150,7 @@
                     <div class="card-header">
                         {{ trans('backpack::base.update_account_info') }}
                     </div>
-                    @include('crud::form_content', [ 'fields' => $crud->fields(), 'action' => 'edit' ])
+                    @include('crud::form_content', [ 'fields' => $crud->fields(), 'action' => 'update' ])
                     <div class="card-footer">
                         <button type="submit" class="btn btn-success"><i class="la la-save"></i> {{ trans('backpack::base.save') }}</button>
                         <a href="{{ backpack_url() }}" class="btn">{{ trans('backpack::base.cancel') }}</a>

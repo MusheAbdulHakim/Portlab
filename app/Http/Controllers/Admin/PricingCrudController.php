@@ -47,6 +47,11 @@ class PricingCrudController extends CrudController
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
          */
         CRUD::addColumn([
+            'name' => 'elements',
+            'type' => 'array_count',
+            'label' => 'Elements'
+        ]);
+        CRUD::addColumn([
             'name' => 'category',
             'type' => 'text',
             'label' => 'Package Category',

@@ -18,11 +18,9 @@ class HomeController extends Controller
         $quotes = Quote::get();
         $pricings = Pricing::get();
         $services = Service::get();
-        $user = User::first();
-        $social_accounts = $user->social_account;
         return view('frontend.home',compact(
             'title','faqs','quotes','pricings',
-            'services','user','social_accounts'
+            'services',
         ));
     }
 }

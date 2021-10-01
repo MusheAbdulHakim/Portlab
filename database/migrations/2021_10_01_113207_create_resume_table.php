@@ -17,7 +17,7 @@ class CreateResumeTable extends Migration
             $table->id();
             $table->jsonb('experiences')->nullable();
             $table->jsonb('qualifications')->nullable();
-            $table->jsonb('skills')->nullable();
+            $table->jsonb('technologies')->nullable();
             $table->timestamps();
         });
     }

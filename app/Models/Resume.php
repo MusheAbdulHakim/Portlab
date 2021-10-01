@@ -19,14 +19,14 @@ class Resume extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    protected $fillable = ['experiences','qualifications','skills'];
+    protected $fillable = ['experiences','qualifications','technologies'];
     // protected $hidden = [];
     // protected $dates = [];
 
     protected $casts = [
         'experiences' => 'array',
         'qualifications' => 'array',
-        'skills' => 'array'
+        'technologies' => 'array'
     ];
 
     /*

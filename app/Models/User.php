@@ -43,6 +43,10 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'social_account' => 'array'
+        'social_account' => 'array',
     ];
+    public function getsocialAccounts($value)
+    {
+        return json_decode($value);
+    }
 }
